@@ -40,3 +40,35 @@ A modern **Automation Testing Framework** built with:
 
 ## 📂 Project Structure
 
+PlaywrightBDD.Framework
+│
+├── Config
+│ └── appsettings.json
+│
+├── Drivers
+│ ├── Hooks.cs
+│ └── PlaywrightDriver.cs
+│
+├── Features
+│ ├── LoginGtplBank.feature
+│ └── LoginWithExcel.feature
+│
+├── Pages
+│ └── GtplLoginPage.cs
+│
+├── StepDefinitions
+│ ├── LoginSteps.cs
+│ └── LoginWithExcelSteps.cs
+│
+├── TestData
+│ └── credentials.xlsx
+│
+├── Utils
+│ ├── ExcelUtils.cs
+│ └── ScreenshotUtils.cs
+│
+├── Screenshots
+│ └── (Auto-generated screenshots on failure / usage)
+│
+└── PlaywrightBDD.Framework.csproj
+

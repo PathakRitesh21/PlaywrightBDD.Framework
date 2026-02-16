@@ -4,11 +4,19 @@
 public class Hooks
 {
     private static PlaywrightDriver? _driver;
+    private static bool _runFolderInitialized = false;
     private readonly ScenarioContext _scenarioContext;
 
     public Hooks(ScenarioContext scenarioContext)
     {
         _scenarioContext = scenarioContext;
+    }
+
+    [BeforeTestRun]
+    public static void BeforeTestRun()
+    {
+        ScreenshotUtils.InitRunFolder();
+        _runFolderInitialized = true;
     }
 
     [BeforeScenario]
@@ -21,12 +29,12 @@ public class Hooks
     [AfterScenario]
     public async Task AfterScenario()
     {
-        // If scenario failed, take screenshot
+        // Take screenshot only if scenario failed (you can change this behavior)
         if (_scenarioContext.TestError != null)
         {
             await ScreenshotUtils.TakeScreenshotAsync(
                 _driver!.Page!,
-                _scenarioContext.ScenarioInfo.Title.Replace(" ", "_")
+                "FAILED_" + _scenarioContext.ScenarioInfo.Title
             );
         }
 

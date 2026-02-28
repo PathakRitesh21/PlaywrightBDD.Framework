@@ -561,3 +561,7 @@ C:\Users\retes\source\repos\PlaywrightBDD.Framework\PlaywrightBDD.Framework\obj\
 C:\Users\retes\source\repos\PlaywrightBDD.Framework\PlaywrightBDD.Framework\obj\Debug\net10.0\PlaywrightBDD.Framework.genruntimeconfig.cache
 C:\Users\retes\source\repos\PlaywrightBDD.Framework\PlaywrightBDD.Framework\obj\Debug\net10.0\ref\PlaywrightBDD.Framework.dll
 C:\Users\retes\source\repos\PlaywrightBDD.Framework\PlaywrightBDD.Framework\obj\Debug\net10.0\PlaywrightBDD.Framework.sourcelink.json
+C:\Users\retes\source\repos\PlaywrightBDD.Framework\PlaywrightBDD.Framework\bin\Debug\net10.0\Allure.Net.Commons.dll
+C:\Users\retes\source\repos\PlaywrightBDD.Framework\PlaywrightBDD.Framework\bin\Debug\net10.0\Allure.NUnit.dll
+C:\Users\retes\source\repos\PlaywrightBDD.Framework\PlaywrightBDD.Framework\bin\Debug\net10.0\AspectInjector.Broker.dll
+C:\Users\retes\source\repos\PlaywrightBDD.Framework\PlaywrightBDD.Framework\bin\Debug\net10.0\MimeTypesMap.dll

@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "4KWOiEc4Td4=",
+  "dgSpecHash": "GQXh+jJjJiE=",
   "success": true,
   "projectFilePath": "C:\\Users\\retes\\source\\repos\\PlaywrightBDD.Framework\\PlaywrightBDD.Framework\\PlaywrightBDD.Framework.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\retes\\.nuget\\packages\\allure.net.commons\\2.14.1\\allure.net.commons.2.14.1.nupkg.sha512",
+    "C:\\Users\\retes\\.nuget\\packages\\allure.nunit\\2.14.1\\allure.nunit.2.14.1.nupkg.sha512",
+    "C:\\Users\\retes\\.nuget\\packages\\aspectinjector\\2.8.1\\aspectinjector.2.8.1.nupkg.sha512",
     "C:\\Users\\retes\\.nuget\\packages\\closedxml\\0.105.0\\closedxml.0.105.0.nupkg.sha512",
     "C:\\Users\\retes\\.nuget\\packages\\closedxml.parser\\2.0.0\\closedxml.parser.2.0.0.nupkg.sha512",
     "C:\\Users\\retes\\.nuget\\packages\\coverlet.collector\\6.0.4\\coverlet.collector.6.0.4.nupkg.sha512",
@@ -28,7 +31,8 @@
     "C:\\Users\\retes\\.nuget\\packages\\microsoft.testplatform.adapterutilities\\18.0.1\\microsoft.testplatform.adapterutilities.18.0.1.nupkg.sha512",
     "C:\\Users\\retes\\.nuget\\packages\\microsoft.testplatform.objectmodel\\18.0.1\\microsoft.testplatform.objectmodel.18.0.1.nupkg.sha512",
     "C:\\Users\\retes\\.nuget\\packages\\microsoft.testplatform.testhost\\18.0.1\\microsoft.testplatform.testhost.18.0.1.nupkg.sha512",
-    "C:\\Users\\retes\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\retes\\.nuget\\packages\\mimetypesmap\\1.0.9\\mimetypesmap.1.0.9.nupkg.sha512",
+    "C:\\Users\\retes\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512",
     "C:\\Users\\retes\\.nuget\\packages\\nunit\\4.3.2\\nunit.4.3.2.nupkg.sha512",
     "C:\\Users\\retes\\.nuget\\packages\\nunit.analyzers\\4.7.0\\nunit.analyzers.4.7.0.nupkg.sha512",
     "C:\\Users\\retes\\.nuget\\packages\\nunit3testadapter\\6.1.0\\nunit3testadapter.6.1.0.nupkg.sha512",

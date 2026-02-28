@@ -11,50 +11,61 @@ jobs:
     runs-on: windows-latest
 
     steps:
+
+    # 1️⃣ Checkout Repository
     - name: Checkout repository
       uses: actions/checkout@v4
 
+    # 2️⃣ Setup .NET
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: '10.0.x'
 
+    # 3️⃣ Restore Dependencies
     - name: Restore dependencies
       run: dotnet restore
 
+    # 4️⃣ Build Project
     - name: Build project
       run: dotnet build --no-restore
 
+    # 5️⃣ Install Playwright Browsers
     - name: Install Playwright browsers
       run: pwsh bin/Debug/net10.0/playwright.ps1 install
 
-    - name: Run Tests (Generate TRX)
+    # 6️⃣ Run Tests and Generate TRX
+    - name: Run Tests
       run: dotnet test --no-build --logger "trx;LogFileName=test_results.trx"
 
-    # 🔹 Install ReportGenerator
-    - name: Install ReportGenerator
-      run: dotnet tool install -g dotnet-reportgenerator-globaltool
+    # 7️⃣ Install TRX to HTML Converter
+    - name: Install trx2html
+      run: dotnet tool install -g trx2html
 
-    # 🔹 Generate HTML Report
-    - name: Generate HTML Report
-      run: |
-        reportgenerator `
-        -reports:**/test_results.trx `
-        -targetdir:TestReport `
-        -reporttypes:Html
+    # 8️⃣ Convert TRX to HTML
+    - name: Generate HTML Test Report
+      run: trx2html **/test_results.trx
 
-    # 🔹 Upload HTML Report
-    - name: Upload HTML Report
+    # 9️⃣ Upload TRX Results
+    - name: Upload TRX Results
       if: always()
       uses: actions/upload-artifact@v4
       with:
-        name: HTML-Test-Report
-        path: TestReport/
+        name: TestResults
+        path: "**/test_results.trx"
 
-    # 🔹 Upload Screenshots
+    # 🔟 Upload Screenshots
     - name: Upload Screenshots
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: Screenshots
         path: "**/Screenshots/**"
+
+    # 1️⃣1️⃣ Upload HTML Test Report
+    - name: Upload HTML Report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: HTML-Test-Report
+        path: "**/test_results.html"

@@ -1,4 +1,5 @@
 # 🚀 PlaywrightBDD.Framework
+[![Playwright BDD CI](https://github.com/PathakRitesh21/PlaywrightBDD.Framework/actions/workflows/main.yml/badge.svg)](https://github.com/PathakRitesh21/PlaywrightBDD.Framework/actions/workflows/main.yml)
 
 A modern **Automation Testing Framework** built with:
 

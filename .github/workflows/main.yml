@@ -31,18 +31,30 @@ jobs:
     - name: Run Tests (Generate TRX)
       run: dotnet test --no-build --logger "trx;LogFileName=test_results.trx"
 
-    # ✅ Upload Test Results
-    - name: Upload Test Results
+    # 🔹 Install ReportGenerator
+    - name: Install ReportGenerator
+      run: dotnet tool install -g dotnet-reportgenerator-globaltool
+
+    # 🔹 Generate HTML Report
+    - name: Generate HTML Report
+      run: |
+        reportgenerator `
+        -reports:**/test_results.trx `
+        -targetdir:TestReport `
+        -reporttypes:Html
+
+    # 🔹 Upload HTML Report
+    - name: Upload HTML Report
       if: always()
       uses: actions/upload-artifact@v4
       with:
-        name: TestResults
-        path: "**/test_results.trx"
+        name: HTML-Test-Report
+        path: TestReport/
 
-    # ✅ Upload Screenshots
+    # 🔹 Upload Screenshots
     - name: Upload Screenshots
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: Screenshots
-        path: Screenshots/
+        path: "**/Screenshots/**"

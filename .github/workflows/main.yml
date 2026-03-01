@@ -11,40 +11,56 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    # ✅ Checkout repo
+    # -----------------------------
+    # Checkout
+    # -----------------------------
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    # ✅ Setup .NET (Stable LTS)
+    # -----------------------------
+    # Setup .NET
+    # -----------------------------
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '8.0.x'
+        dotnet-version: '8.0.x'   # Use 8.0 (stable). Avoid net10 preview in CI.
 
-    # ✅ Restore dependencies
+    # -----------------------------
+    # Restore
+    # -----------------------------
     - name: Restore dependencies
       run: dotnet restore
 
-    # ✅ Build project
+    # -----------------------------
+    # Build
+    # -----------------------------
     - name: Build project
       run: dotnet build --no-restore
 
-    # ✅ Install Playwright browsers
+    # -----------------------------
+    # Install Playwright browsers
+    # -----------------------------
     - name: Install Playwright browsers
-      run: pwsh ./bin/Debug/net8.0/playwright.ps1 install
+      run: pwsh bin/Debug/net8.0/playwright.ps1 install
 
-    # ✅ Run tests (do not stop workflow on failure)
+    # -----------------------------
+    # Run Tests (Generates ./allure-results)
+    # -----------------------------
     - name: Run Tests
       run: dotnet test --no-build
-      continue-on-error: true
 
-    # ✅ Debug: Show Allure results folder content
-    - name: List Allure Results
+    # -----------------------------
+    # Debug - Verify Allure Results
+    # -----------------------------
+    - name: Debug - List Allure Results
       run: |
-        echo "Listing Allure Results Folder"
-        dir ./bin/Debug/net8.0/allure-results
+        echo "Checking for allure-results folder..."
+        dir
+        dir allure-results
 
-    # ✅ Install Allure CLI
+    # -----------------------------
+    # Install Allure CLI (Direct Download - Stable)
+    # -----------------------------
     - name: Install Allure CLI
       shell: pwsh
       run: |
@@ -55,11 +71,16 @@ jobs:
         $allurePath = (Get-ChildItem -Directory | Where-Object { $_.Name -like "allure-*" }).FullName + "\bin"
         echo $allurePath | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
 
-    # ✅ Generate Allure HTML report
+    # -----------------------------
+    # Generate Allure Report
+    # IMPORTANT: Uses ./allure-results (root)
+    # -----------------------------
     - name: Generate Allure Report
-      run: allure generate ./bin/Debug/net8.0/allure-results --clean -o allure-report
+      run: allure generate ./allure-results --clean -o allure-report
 
-    # ✅ Upload Allure report (always upload)
+    # -----------------------------
+    # Upload Allure Report
+    # -----------------------------
     - name: Upload Allure Report
       if: always()
       uses: actions/upload-artifact@v4
@@ -67,7 +88,9 @@ jobs:
         name: Allure-Report
         path: allure-report/
 
-    # ✅ Upload Screenshots (always upload)
+    # -----------------------------
+    # Upload Screenshots
+    # -----------------------------
     - name: Upload Screenshots
       if: always()
       uses: actions/upload-artifact@v4

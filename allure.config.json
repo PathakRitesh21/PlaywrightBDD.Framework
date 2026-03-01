@@ -1,7 +1,7 @@
-﻿{
+{
   "allure": {
     "directory": "allure-results",
     "links": [],
-    "cleanup": true
+    "cleanup": false
   }
 }

@@ -5,13 +5,14 @@ using NUnit.Framework;
 [Binding]
 public class LoginWithExcelSteps
 {
-    private readonly GtplLoginPage _loginPage;
+    private readonly GtplLoginPage? _loginPage;
     private string? _username;
     private string? _password;
 
     public LoginWithExcelSteps()
     {
-        _loginPage = new GtplLoginPage(Hooks.Driver.Page!);
+        var driver = Hooks.Driver;
+        _loginPage = driver != null ? new GtplLoginPage(driver.Page!) : null;
     }
 
     [Given("user reads credentials from Excel")]
@@ -25,14 +26,16 @@ public class LoginWithExcelSteps
     [When("user logs in using Excel data")]
     public async Task WhenUserLogsInUsingExcel()
     {
-        await _loginPage.Navigate();
-        await _loginPage.Login(_username!, _password!);
+        Assert.That(_loginPage, Is.Not.Null, "Login page not initialized - Playwright driver is null");
+        await _loginPage!.Navigate();
+        await _loginPage!.Login(_username!, _password!);
     }
 
     [Then("user should be logged in successfully with data from Excel")]
     public async Task ThenUserShouldBeLoggedIn()
     {
-        await ScreenshotUtils.TakeScreenshotAsync(Hooks.Driver.Page!, "AfterLogin");
-        Assert.That(await _loginPage.IsLoggedIn(), Is.True);
+        Assert.That(_loginPage, Is.Not.Null, "Login page not initialized - Playwright driver is null");
+        await ScreenshotUtils.TakeScreenshotAsync(Hooks.Driver!.Page!, "AfterLogin");
+        Assert.That(await _loginPage!.IsLoggedIn(), Is.True);
     }
 }

@@ -1,27 +1,31 @@
 ﻿using Microsoft.Playwright;
 
-public class PlaywrightDriver
+public class PlaywrightDriver : IAsyncDisposable
 {
-    public IPlaywright? Playwright { get; private set; }
-    public IBrowser? Browser { get; private set; }
-    public IPage? Page { get; private set; }
+    private IPlaywright? _playwright;
+    private IBrowser? _browser;
+    private IBrowserContext? _context;
+    private IPage? _page;
+
+    public IPage Page => _page!;
 
     public async Task Init()
     {
-        Playwright = await Microsoft.Playwright.Playwright.CreateAsync();
-
-        Browser = await Playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
+        _playwright = await Playwright.CreateAsync();
+        _browser = await _playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
         {
-            Headless = false
+            Headless = true
         });
 
-        var context = await Browser.NewContextAsync();
-        Page = await context.NewPageAsync();
+        _context = await _browser.NewContextAsync();
+        _page = await _context.NewPageAsync();
     }
 
-    public async Task Quit()
+    public async ValueTask DisposeAsync()
     {
-        await Browser!.CloseAsync();
-        Playwright!.Dispose();
+        if (_page != null) await _page.CloseAsync();
+        if (_context != null) await _context.CloseAsync();
+        if (_browser != null) await _browser.CloseAsync();
+        _playwright?.Dispose();
     }
 }

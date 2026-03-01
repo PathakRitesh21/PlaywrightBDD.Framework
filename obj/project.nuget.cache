@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GQXh+jJjJiE=",
+  "dgSpecHash": "VoEx2AZT0Cg=",
   "success": true,
   "projectFilePath": "C:\\Users\\retes\\source\\repos\\PlaywrightBDD.Framework\\PlaywrightBDD.Framework\\PlaywrightBDD.Framework.csproj",
   "expectedPackageFiles": [
@@ -41,8 +41,13 @@
     "C:\\Users\\retes\\.nuget\\packages\\reqnroll.nunit\\3.3.3\\reqnroll.nunit.3.3.3.nupkg.sha512",
     "C:\\Users\\retes\\.nuget\\packages\\reqnroll.tools.msbuild.generation\\3.3.3\\reqnroll.tools.msbuild.generation.3.3.3.nupkg.sha512",
     "C:\\Users\\retes\\.nuget\\packages\\sixlabors.fonts\\1.0.0\\sixlabors.fonts.1.0.0.nupkg.sha512",
+    "C:\\Users\\retes\\.nuget\\packages\\system.collections.immutable\\8.0.0\\system.collections.immutable.8.0.0.nupkg.sha512",
     "C:\\Users\\retes\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
-    "C:\\Users\\retes\\.nuget\\packages\\system.io.packaging\\8.0.1\\system.io.packaging.8.0.1.nupkg.sha512"
+    "C:\\Users\\retes\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.0\\system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512",
+    "C:\\Users\\retes\\.nuget\\packages\\system.io.packaging\\8.0.1\\system.io.packaging.8.0.1.nupkg.sha512",
+    "C:\\Users\\retes\\.nuget\\packages\\system.reflection.metadata\\8.0.0\\system.reflection.metadata.8.0.0.nupkg.sha512",
+    "C:\\Users\\retes\\.nuget\\packages\\system.text.json\\8.0.5\\system.text.json.8.0.5.nupkg.sha512",
+    "C:\\Users\\retes\\.nuget\\packages\\system.threading.channels\\9.0.6\\system.threading.channels.9.0.6.nupkg.sha512"
   ],
   "logs": []
 }

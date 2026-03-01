@@ -1,4 +1,5 @@
-﻿using Microsoft.Playwright;
+﻿using DocumentFormat.OpenXml.Spreadsheet;
+using Microsoft.Playwright;
 
 public class GtplLoginPage
 {
@@ -12,7 +13,12 @@ public class GtplLoginPage
 
     public async Task Navigate()
     {
-        await _page.GotoAsync(Url);
+        await _page.GotoAsync(Url,
+    new PageGotoOptions
+    {
+        Timeout = 60000,
+        WaitUntil = WaitUntilState.Load
+    });
     }
 
     public async Task Login(string user, string pass)

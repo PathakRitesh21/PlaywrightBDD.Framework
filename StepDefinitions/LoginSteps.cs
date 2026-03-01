@@ -2,35 +2,37 @@
 using NUnit.Framework;
 using Reqnroll;
 
-
 [Binding]
 public class LoginSteps
 {
-    private readonly GtplLoginPage _loginPage;
+    private readonly GtplLoginPage? _loginPage;
 
     public LoginSteps()
     {
-        _loginPage = new GtplLoginPage(Hooks.Driver.Page!);
-
+        var driver = Hooks.Driver;
+        _loginPage = driver != null ? new GtplLoginPage(driver.Page!) : null;
     }
 
     [Given("user navigates to GTPL login page")]
     public async Task GivenUserNavigates()
     {
-        await _loginPage.Navigate();
+        Assert.That(_loginPage, Is.Not.Null, "Login page not initialized - Playwright driver is null");
+        await _loginPage!.Navigate();
     }
 
     [When(@"user logs in with username ""(.*)"" and password ""(.*)""")]
     public async Task WhenUserLogsIn(string user, string pass)
     {
-        await _loginPage.Login(user, pass);
+        Assert.That(_loginPage, Is.Not.Null, "Login page not initialized - Playwright driver is null");
+        await _loginPage!.Login(user, pass);
     }
 
     [Then("user should be logged in successfully")]
     public async Task ThenUserShouldBeLoggedIn()
     {
-        await ScreenshotUtils.TakeScreenshotAsync(Hooks.Driver.Page!, "AfterLogin");
-        Assert.That(await _loginPage.IsLoggedIn(), Is.True);
+        Assert.That(_loginPage, Is.Not.Null, "Login page not initialized - Playwright driver is null");
+        await ScreenshotUtils.TakeScreenshotAsync(Hooks.Driver!.Page!, "AfterLogin");
+        Assert.That(await _loginPage!.IsLoggedIn(), Is.True);
 
     }
 }

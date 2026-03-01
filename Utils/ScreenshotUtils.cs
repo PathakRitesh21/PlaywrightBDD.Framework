@@ -45,14 +45,18 @@ public static class ScreenshotUtils
 
         Console.WriteLine($"📸 Screenshot saved: {filePath}");
 
-        // 🔥 Attach to Allure Report
+        // Attach screenshot to Allure results
         if (File.Exists(filePath))
         {
-            AllureApi.AddAttachment(
-                safeName,
-                "image/png",
-                filePath
-            );
+            try
+            {
+                AllureApi.AddAttachment(safeName, "image/png", filePath);
+                Console.WriteLine($"📎 Screenshot attached to Allure: {filePath}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"⚠ Unable to attach screenshot to Allure: {ex.Message}");
+            }
         }
     }
 }

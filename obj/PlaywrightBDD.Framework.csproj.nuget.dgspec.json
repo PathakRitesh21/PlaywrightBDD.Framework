@@ -53,7 +53,7 @@
           "dependencies": {
             "Allure.NUnit": {
               "target": "Package",
-              "version": "[2.14.1, )"
+              "version": "[2.11.0, )"
             },
             "Allure.Net.Commons": {
               "target": "Package",

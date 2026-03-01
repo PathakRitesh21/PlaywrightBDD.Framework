@@ -8,11 +8,13 @@
 		<IsPackable>false</IsPackable>
 		<IsTestProject>true</IsTestProject>
 		<ReqnrollGenerateCodeBehind>true</ReqnrollGenerateCodeBehind>
+		<!-- Enable ALLURE conditional symbol so assembly attribute compiles when desired -->
+		<DefineConstants>$(DefineConstants);ALLURE</DefineConstants>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Allure.Net.Commons" Version="2.14.1" />
-		<PackageReference Include="Allure.NUnit" Version="2.14.1" />
+		<PackageReference Include="Allure.NUnit" Version="2.11.0" />
 		<PackageReference Include="ClosedXML" Version="0.105.0" />
 		<PackageReference Include="coverlet.collector" Version="6.0.4" />
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />

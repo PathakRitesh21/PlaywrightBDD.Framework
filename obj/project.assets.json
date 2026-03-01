@@ -28,11 +28,12 @@
           }
         }
       },
-      "Allure.NUnit/2.14.1": {
+      "Allure.NUnit/2.11.0": {
         "type": "package",
         "dependencies": {
-          "Allure.Net.Commons": "2.14.1",
-          "NUnit": "3.13.3"
+          "Allure.Net.Commons": "2.11.0",
+          "NUnit": "3.13.3",
+          "NUnit.Engine.Api": "3.15.2"
         },
         "compile": {
           "lib/netstandard2.0/Allure.NUnit.dll": {}
@@ -909,6 +910,15 @@
       "NUnit.Analyzers/4.7.0": {
         "type": "package"
       },
+      "NUnit.Engine.Api/3.15.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/nunit.engine.api.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/nunit.engine.api.dll": {}
+        }
+      },
       "NUnit3TestAdapter/6.1.0": {
         "type": "package",
         "dependencies": {
@@ -1132,17 +1142,17 @@
         "lib/netstandard2.0/Allure.Net.Commons.xml"
       ]
     },
-    "Allure.NUnit/2.14.1": {
-      "sha512": "RQZDe/ukmKd5LoQqAiz4tHjwg/wZ553hvdhfREQZ/iBkjDv5R+mRcasracQAni7xvJhirVrCdZ9oZtZvlQGsgw==",
+    "Allure.NUnit/2.11.0": {
+      "sha512": "EOJiqvj7vYBwrcGhHehKw2osi0VqygvLWErHKCA1b/+brWwI4pNhjUI9SRjuW2Nw47pvFy0RG4iT+qNGJtYQ/A==",
       "type": "package",
-      "path": "allure.nunit/2.14.1",
+      "path": "allure.nunit/2.11.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Allure-N-Color.png",
-        "LICENSE",
+        "LICENSE.md",
         "README.md",
-        "allure.nunit.2.14.1.nupkg.sha512",
+        "allure.nunit.2.11.0.nupkg.sha512",
         "allure.nunit.nuspec",
         "lib/netstandard2.0/Allure.NUnit.dll"
       ]
@@ -2624,6 +2634,21 @@
         "nunit.analyzers.nuspec"
       ]
     },
+    "NUnit.Engine.Api/3.15.2": {
+      "sha512": "f9fFpqSARUxu58dsWrmI91CUbg8TDBSi/b+bgXZkmZSrh/5VlBiGHgtEWQnIg75hlLyJGYufU9H2tKk9joMXww==",
+      "type": "package",
+      "path": "nunit.engine.api/3.15.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "images/nunit_256.png",
+        "lib/net20/nunit.engine.api.dll",
+        "lib/netstandard2.0/nunit.engine.api.dll",
+        "nunit.engine.api.3.15.2.nupkg.sha512",
+        "nunit.engine.api.nuspec"
+      ]
+    },
     "NUnit3TestAdapter/6.1.0": {
       "sha512": "H4zRIkiGyPa7RpApzXwan5vpZzu4ZDIzuKNlHFiDjOt5Irq4Y5j8r1SA7Oeo0yFCUyfiY7Jy2DTl8RnFZwpKNA==",
       "type": "package",
@@ -3143,7 +3168,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "Allure.NUnit >= 2.14.1",
+      "Allure.NUnit >= 2.11.0",
       "Allure.Net.Commons >= 2.14.1",
       "ClosedXML >= 0.105.0",
       "Microsoft.NET.Test.Sdk >= 18.0.1",
@@ -3210,7 +3235,7 @@
         "dependencies": {
           "Allure.NUnit": {
             "target": "Package",
-            "version": "[2.14.1, )"
+            "version": "[2.11.0, )"
           },
           "Allure.Net.Commons": {
             "target": "Package",

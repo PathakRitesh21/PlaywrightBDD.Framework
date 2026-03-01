@@ -1,10 +1,8 @@
-﻿using Allure.NUnit;
-using Io.Cucumber.Messages.Types;
+﻿using Io.Cucumber.Messages.Types;
 using NUnit.Framework;
 using Reqnroll;
 
 [Binding]
-[AllureNUnit]
 public class LoginSteps
 {
     private readonly GtplLoginPage? _loginPage;

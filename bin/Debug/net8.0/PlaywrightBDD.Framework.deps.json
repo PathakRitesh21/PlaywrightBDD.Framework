@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "PlaywrightBDD.Framework/1.0.0": {
         "dependencies": {
-          "Allure.NUnit": "2.14.1",
+          "Allure.NUnit": "2.11.0",
           "Allure.Net.Commons": "2.14.1",
           "ClosedXML": "0.105.0",
           "Microsoft.NET.Test.Sdk": "18.0.1",
@@ -35,15 +35,16 @@
           }
         }
       },
-      "Allure.NUnit/2.14.1": {
+      "Allure.NUnit/2.11.0": {
         "dependencies": {
           "Allure.Net.Commons": "2.14.1",
-          "NUnit": "4.3.2"
+          "NUnit": "4.3.2",
+          "NUnit.Engine.Api": "3.15.2"
         },
         "runtime": {
           "lib/netstandard2.0/Allure.NUnit.dll": {
-            "assemblyVersion": "2.14.1.0",
-            "fileVersion": "2.14.1.0"
+            "assemblyVersion": "2.11.0.0",
+            "fileVersion": "2.11.0.0"
           }
         }
       },
@@ -736,6 +737,14 @@
           }
         }
       },
+      "NUnit.Engine.Api/3.15.2": {
+        "runtime": {
+          "lib/netstandard2.0/nunit.engine.api.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.99.0.0"
+          }
+        }
+      },
       "NUnit3TestAdapter/6.1.0": {
         "dependencies": {
           "Microsoft.Testing.Extensions.VSTestBridge": "2.0.2",
@@ -822,12 +831,12 @@
       "path": "allure.net.commons/2.14.1",
       "hashPath": "allure.net.commons.2.14.1.nupkg.sha512"
     },
-    "Allure.NUnit/2.14.1": {
+    "Allure.NUnit/2.11.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-RQZDe/ukmKd5LoQqAiz4tHjwg/wZ553hvdhfREQZ/iBkjDv5R+mRcasracQAni7xvJhirVrCdZ9oZtZvlQGsgw==",
-      "path": "allure.nunit/2.14.1",
-      "hashPath": "allure.nunit.2.14.1.nupkg.sha512"
+      "sha512": "sha512-EOJiqvj7vYBwrcGhHehKw2osi0VqygvLWErHKCA1b/+brWwI4pNhjUI9SRjuW2Nw47pvFy0RG4iT+qNGJtYQ/A==",
+      "path": "allure.nunit/2.11.0",
+      "hashPath": "allure.nunit.2.11.0.nupkg.sha512"
     },
     "AspectInjector/2.8.1": {
       "type": "package",
@@ -1017,6 +1026,13 @@
       "sha512": "sha512-puVXayXNmEu7MFQSUswGmUjOy3M3baprMbkLl5PAutpeDoGTr+jPv33qAYsqxywi2wJCq8l/O3EhHoLulPE1iQ==",
       "path": "nunit/4.3.2",
       "hashPath": "nunit.4.3.2.nupkg.sha512"
+    },
+    "NUnit.Engine.Api/3.15.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-f9fFpqSARUxu58dsWrmI91CUbg8TDBSi/b+bgXZkmZSrh/5VlBiGHgtEWQnIg75hlLyJGYufU9H2tKk9joMXww==",
+      "path": "nunit.engine.api/3.15.2",
+      "hashPath": "nunit.engine.api.3.15.2.nupkg.sha512"
     },
     "NUnit3TestAdapter/6.1.0": {
       "type": "package",

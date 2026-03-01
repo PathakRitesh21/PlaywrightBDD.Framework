@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PlaywrightBDD.Framework")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+da9398eb38e79940ab794594b44f5c6d63929c96")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf3839cfdf71c8dd214a7d74f1f331210cfe914d")]
 [assembly: System.Reflection.AssemblyProductAttribute("PlaywrightBDD.Framework")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PlaywrightBDD.Framework")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

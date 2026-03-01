@@ -1,8 +1,11 @@
-﻿using Reqnroll;
+﻿using Allure.NUnit;
 using NUnit.Framework;
+using Reqnroll;
+
 
 
 [Binding]
+[AllureNUnit]
 public class LoginWithExcelSteps
 {
     private readonly GtplLoginPage? _loginPage;
